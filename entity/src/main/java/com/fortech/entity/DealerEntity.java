@@ -1,7 +1,5 @@
 package com.fortech.entity;
 
-import com.sun.istack.internal.NotNull;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -19,12 +17,10 @@ public class DealerEntity {
     @Column(name = "firstName")
     private String firstName;
 
-    @NotNull
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @NotNull
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
 
     @OneToMany(mappedBy = "dealerEntity", cascade = CascadeType.ALL)
