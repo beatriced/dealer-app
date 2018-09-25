@@ -10,8 +10,7 @@
         <module>core</module>
         <module>entity</module>
         <module>web</module>
-    <module>dealer-cars-app-persistence</module>
-        <module>model</module>
+        <module>commons</module>
     </modules>
 
 

@@ -1,20 +1,12 @@
 package com.fortech.model;
 
-import com.fortech.entity.DealerEntity;
-
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class DealerDTO {
 
-    public static final String namePattern = "[A-Z][a-z]+";
     private int ID;
-
-    @Pattern(regexp = namePattern)
     private String lastName;
-
-    @Pattern(regexp = namePattern)
     private String firstName;
 
     @Email
@@ -23,12 +15,13 @@ public class DealerDTO {
     @Size(min = 6)
     private String password;
 
-    public DealerDTO(DealerEntity dealerEntity){
-        this.ID=dealerEntity.getID();
-        this.lastName=dealerEntity.getLastName();
-        this.firstName=dealerEntity.getFirstName();
-        this.email=dealerEntity.getEmail();
-        this.password=dealerEntity.getPassword();
+    public DealerDTO(int ID, String lastName, String firstName,
+                     @Email String email, @Size(min = 6) String password) {
+        this.ID = ID;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.email = email;
+        this.password = password;
     }
 
     public int getID() {
@@ -69,5 +62,16 @@ public class DealerDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "DealerDTO{" +
+                "ID=" + ID +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

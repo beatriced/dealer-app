@@ -20,15 +20,27 @@ public class SaleEntity {
 
     @ManyToOne
     @JoinColumn(name = "dealerID", referencedColumnName = "ID")
-    private int dealerID;
+    private DealerEntity dealerEntity;
 
     @ManyToOne
     @JoinColumn(name = "customerID", referencedColumnName = "ID")
-    private int customerID;
+    private CustomerEntity customerEntity;
 
     @ManyToOne
     @JoinColumn(name = "carID", referencedColumnName = "ID")
-    private int carID;
+    private CarEntity carEntity;
+
+    public SaleEntity(String paymentType, Date orderDate, DealerEntity dealerEntity,
+                      CustomerEntity customerEntity, CarEntity carEntity) {
+        this.paymentType = paymentType;
+        this.orderDate = orderDate;
+        this.dealerEntity = dealerEntity;
+        this.customerEntity = customerEntity;
+        this.carEntity = carEntity;
+    }
+
+    public SaleEntity() {
+    }
 
     public int getID() {
         return ID;
@@ -54,51 +66,39 @@ public class SaleEntity {
         this.orderDate = orderDate;
     }
 
-    public int getDealerID() {
-        return dealerID;
+    public DealerEntity getDealerEntity() {
+        return dealerEntity;
     }
 
-    public void setDealerID(int dealerID) {
-        this.dealerID = dealerID;
+    public void setDealerEntity(DealerEntity dealerEntity) {
+        this.dealerEntity = dealerEntity;
     }
 
-    public int getCustomerID() {
-        return customerID;
+    public CustomerEntity getCustomerEntity() {
+        return customerEntity;
     }
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+    public void setCustomerEntity(CustomerEntity customerEntity) {
+        this.customerEntity = customerEntity;
     }
 
-    public int getCarID() {
-        return carID;
+    public CarEntity getCarEntity() {
+        return carEntity;
     }
 
-    public void setCarID(int carID) {
-        this.carID = carID;
-    }
-
-    public SaleEntity(String paymentType, Date orderDate,
-                      int dealerID, int customerID, int carID) {
-        this.paymentType = paymentType;
-        this.orderDate = orderDate;
-        this.dealerID = dealerID;
-        this.customerID = customerID;
-        this.carID = carID;
-    }
-
-    public SaleEntity() {
+    public void setCarEntity(CarEntity carEntity) {
+        this.carEntity = carEntity;
     }
 
     @Override
     public String toString() {
         return "SaleEntity{" +
-                "saleId=" + ID +
+                "ID=" + ID +
                 ", paymentType='" + paymentType + '\'' +
                 ", orderDate=" + orderDate +
-                ", dealerEntity=" + dealerID +
-                ", customerEntity=" + customerID +
-                ", carEntity=" + carID +
+                ", dealerEntity=" + dealerEntity +
+                ", customerEntity=" + customerEntity +
+                ", carEntity=" + carEntity +
                 '}';
     }
 }

@@ -34,10 +34,27 @@ public class CarEntity {
 
     @ManyToOne
     @JoinColumn(name = "dealerID", referencedColumnName = "ID")
-    private int dealerID;
+    private DealerEntity dealerEntity;
 
     @OneToMany(mappedBy = "carEntity", cascade = CascadeType.ALL)
     private List<SaleEntity> saleEntities;
+
+    public CarEntity(String make, String model, String color, double price, String state,
+                     Date fabricationYear, Date registerDate, DealerEntity dealerEntity,
+                     List<SaleEntity> saleEntities) {
+        this.make = make;
+        this.model = model;
+        this.color = color;
+        this.price = price;
+        this.state = state;
+        this.fabricationYear = fabricationYear;
+        this.registerDate = registerDate;
+        this.dealerEntity = dealerEntity;
+        this.saleEntities = saleEntities;
+    }
+
+    public CarEntity() {
+    }
 
     public int getID() {
         return ID;
@@ -103,12 +120,12 @@ public class CarEntity {
         this.registerDate = registerDate;
     }
 
-    public int getDealerID() {
-        return dealerID;
+    public DealerEntity getDealerEntity() {
+        return dealerEntity;
     }
 
-    public void setDealerID(int dealerID) {
-        this.dealerID = dealerID;
+    public void setDealerEntity(DealerEntity dealerEntity) {
+        this.dealerEntity = dealerEntity;
     }
 
     public List<SaleEntity> getSaleEntities() {
@@ -119,27 +136,10 @@ public class CarEntity {
         this.saleEntities = saleEntities;
     }
 
-    public CarEntity(String make, String model, String color, double price, String state,
-                     Date fabricationYear, Date registerDate, int dealerID,
-                     List<SaleEntity> saleEntities) {
-        this.make = make;
-        this.model = model;
-        this.color = color;
-        this.price = price;
-        this.state = state;
-        this.fabricationYear = fabricationYear;
-        this.registerDate = registerDate;
-        this.dealerID = dealerID;
-        this.saleEntities = saleEntities;
-    }
-
-    public CarEntity() {
-    }
-
     @Override
     public String toString() {
         return "CarEntity{" +
-                "carID=" + ID +
+                "ID=" + ID +
                 ", make='" + make + '\'' +
                 ", model='" + model + '\'' +
                 ", color='" + color + '\'' +
@@ -147,7 +147,7 @@ public class CarEntity {
                 ", state='" + state + '\'' +
                 ", fabricationYear=" + fabricationYear +
                 ", registerDate=" + registerDate +
-                ", dealerEntity=" + dealerID +
+                ", dealerEntity=" + dealerEntity +
                 ", saleEntities=" + saleEntities +
                 '}';
     }

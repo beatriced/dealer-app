@@ -29,6 +29,19 @@ public class DealerEntity {
     @OneToMany(mappedBy = "dealerEntity", cascade = CascadeType.ALL)
     private List<SaleEntity> saleEntityList;
 
+    public DealerEntity(String lastName, String firstName, String password, String email,
+                        List<CarEntity> carEntityList, List<SaleEntity> saleEntityList) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.password = password;
+        this.email = email;
+        this.carEntityList = carEntityList;
+        this.saleEntityList = saleEntityList;
+    }
+
+    public DealerEntity() {
+    }
+
     public int getID() {
         return ID;
     }
@@ -83,19 +96,6 @@ public class DealerEntity {
 
     public void setSaleEntityList(List<SaleEntity> saleEntityList) {
         this.saleEntityList = saleEntityList;
-    }
-
-    public DealerEntity(String lastName, String firstName, String password, String email,
-                        List<CarEntity> carEntityList, List<SaleEntity> saleEntityList) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.password = password;
-        this.email = email;
-        this.carEntityList = carEntityList;
-        this.saleEntityList = saleEntityList;
-    }
-
-    public DealerEntity() {
     }
 
     @Override

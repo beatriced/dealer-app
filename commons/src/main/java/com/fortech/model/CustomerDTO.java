@@ -1,20 +1,12 @@
 package com.fortech.model;
 
-import com.fortech.entity.CustomerEntity;
-
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class CustomerDTO {
 
-    public static final String namePattern = "[A-Z][a-z]+";
     private int ID;
-
-    @Pattern(regexp = namePattern)
     private String lastName;
-
-    @Pattern(regexp = namePattern)
     private String firstName;
 
     @Email
@@ -25,13 +17,14 @@ public class CustomerDTO {
 
     private String type;
 
-    public CustomerDTO(CustomerEntity customerEntity){
-        this.ID=customerEntity.getID();
-        this.lastName=customerEntity.getLastName();
-        this.firstName=customerEntity.getFirstName();
-        this.email=customerEntity.getEmail();
-        this.password=customerEntity.getPassword();
-        this.type=customerEntity.getType();
+    public CustomerDTO(int ID, String lastName, String firstName,
+                       @Email String email, @Size(min = 6) String password, String type) {
+        this.ID = ID;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.email = email;
+        this.password = password;
+        this.type = type;
     }
 
     public int getID() {
@@ -80,5 +73,17 @@ public class CustomerDTO {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerDTO{" +
+                "ID=" + ID +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

@@ -1,7 +1,5 @@
 package com.fortech.model;
 
-import com.fortech.entity.CarEntity;
-
 import java.util.Date;
 
 public class CarDTO {
@@ -16,15 +14,17 @@ public class CarDTO {
     private Date registerDate;
     private int dealerID;
 
-    public CarDTO(CarEntity carEntity){
-        this.ID=carEntity.getID();
-        this.make=carEntity.getMake();
-        this.color=carEntity.getColor();
-        this.price=carEntity.getPrice();
-        this.state=carEntity.getState();
-        this.fabricationYear=carEntity.getFabricationYear();
-        this.registerDate=carEntity.getRegisterDate();
-        this.dealerID=carEntity.getDealerID();
+    public CarDTO(int ID, String make, String model, String color, double price, String state,
+                  Date fabricationYear, Date registerDate, int dealerID) {
+        this.ID = ID;
+        this.make = make;
+        this.model = model;
+        this.color = color;
+        this.price = price;
+        this.state = state;
+        this.fabricationYear = fabricationYear;
+        this.registerDate = registerDate;
+        this.dealerID = dealerID;
     }
 
     public int getID() {
@@ -97,5 +97,20 @@ public class CarDTO {
 
     public void setDealerID(int dealerID) {
         this.dealerID = dealerID;
+    }
+
+    @Override
+    public String toString() {
+        return "CarDTO{" +
+                "ID=" + ID +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                ", state='" + state + '\'' +
+                ", fabricationYear=" + fabricationYear +
+                ", registerDate=" + registerDate +
+                ", dealerID=" + dealerID +
+                '}';
     }
 }
