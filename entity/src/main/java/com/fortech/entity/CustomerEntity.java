@@ -9,7 +9,7 @@ public class CustomerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int customerID;
+    private int ID;
 
     @Column(name = "lastName")
     private String lastName;
@@ -39,10 +39,13 @@ public class CustomerEntity {
         this.saleEntityList = saleEntityList;
     }
 
+    public CustomerEntity() {
+    }
+
     @Override
     public String toString() {
         return "CustomerEntity{" +
-                "id=" + customerID +
+                "id=" + ID +
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", email='" + email + '\'' +

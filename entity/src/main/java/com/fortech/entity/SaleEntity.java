@@ -10,16 +10,7 @@ public class SaleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int saleID;
-
-    @Column(name = "dealerID")
-    private int dealerId;
-
-    @Column(name = "carID")
-    private int carId;
-
-    @Column(name = "CustomerID")
-    private int customerId;
+    private int ID;
 
     @Column(name = "paymentType")
     private String paymentType;
@@ -28,22 +19,19 @@ public class SaleEntity {
     private Date orderDate;
 
     @ManyToOne
-    @JoinColumn(name = "dealerID")
+    @JoinColumn(name = "dealerID", referencedColumnName = "ID")
     private DealerEntity dealerEntity;
 
     @ManyToOne
-    @JoinColumn(name = "customerID")
+    @JoinColumn(name = "customerID", referencedColumnName = "ID")
     private CustomerEntity customerEntity;
 
     @ManyToOne
-    @JoinColumn(name = "carID")
+    @JoinColumn(name = "carID", referencedColumnName = "ID")
     private CarEntity carEntity;
 
-    public SaleEntity(int dealerId, int carId, int customerId, String paymentType, Date orderDate,
+    public SaleEntity(String paymentType, Date orderDate,
                       DealerEntity dealerEntity, CustomerEntity customerEntity, CarEntity carEntity) {
-        this.dealerId = dealerId;
-        this.carId = carId;
-        this.customerId = customerId;
         this.paymentType = paymentType;
         this.orderDate = orderDate;
         this.dealerEntity = dealerEntity;
@@ -51,13 +39,13 @@ public class SaleEntity {
         this.carEntity = carEntity;
     }
 
+    public SaleEntity() {
+    }
+
     @Override
     public String toString() {
         return "SaleEntity{" +
-                "saleId=" + saleID +
-                ", dealerId=" + dealerId +
-                ", carId=" + carId +
-                ", customerId=" + customerId +
+                "saleId=" + ID +
                 ", paymentType='" + paymentType + '\'' +
                 ", orderDate=" + orderDate +
                 ", dealerEntity=" + dealerEntity +

@@ -9,7 +9,7 @@ public class DealerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int dealerID;
+    private int ID;
 
     @Column(name = "lastName")
     private String lastName;
@@ -39,10 +39,13 @@ public class DealerEntity {
         this.saleEntityList = saleEntityList;
     }
 
+    public DealerEntity() {
+    }
+
     @Override
     public String toString() {
         return "DealerEntity{" +
-                "id=" + dealerID +
+                "id=" + ID +
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", password='" + password + '\'' +

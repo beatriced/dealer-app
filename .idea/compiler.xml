@@ -8,7 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="core" />
         <module name="entity" />
+        <module name="model" />
+        <module name="web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dealer-app-web" target="1.7" />
+      <module name="dealer-cars-app-persistence" target="1.7" />
+      <module name="Persistence" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

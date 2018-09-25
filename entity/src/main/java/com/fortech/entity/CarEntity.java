@@ -9,10 +9,7 @@ import java.util.List;
 public class CarEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int carID;
-
-    @Column(name = "dealerID")
-    private int dealerID;
+    private int ID;
 
     @Column(name = "make")
     private String make;
@@ -36,16 +33,15 @@ public class CarEntity {
     private Date registerDate;
 
     @ManyToOne
-    @JoinColumn(name = "dealerID")
+    @JoinColumn(name = "dealerID", referencedColumnName = "ID")
     private DealerEntity dealerEntity;
 
     @OneToMany(mappedBy = "carEntity", cascade = CascadeType.ALL)
     private List<SaleEntity> saleEntities;
 
-    public CarEntity(int dealerID, String make, String model, String color, double price, String state,
+    public CarEntity(String make, String model, String color, double price, String state,
                      Date fabricationYear, Date registerDate, DealerEntity dealerEntity,
                      List<SaleEntity> saleEntities) {
-        this.dealerID = dealerID;
         this.make = make;
         this.model = model;
         this.color = color;
@@ -57,11 +53,13 @@ public class CarEntity {
         this.saleEntities = saleEntities;
     }
 
+    public CarEntity() {
+    }
+
     @Override
     public String toString() {
         return "CarEntity{" +
-                "carID=" + carID +
-                ", dealerID=" + dealerID +
+                "carID=" + ID +
                 ", make='" + make + '\'' +
                 ", model='" + model + '\'' +
                 ", color='" + color + '\'' +
