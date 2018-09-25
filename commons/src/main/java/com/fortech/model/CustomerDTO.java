@@ -2,8 +2,9 @@ package com.fortech.model;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
-public class CustomerDTO {
+public class CustomerDTO implements Serializable {
 
     private int ID;
     private String lastName;

@@ -1,8 +1,9 @@
 package com.fortech.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class CarDTO {
+public class CarDTO implements Serializable {
 
     private int ID;
     private String make;
@@ -12,10 +13,9 @@ public class CarDTO {
     private String state;
     private Date fabricationYear;
     private Date registerDate;
-    private int dealerID;
 
     public CarDTO(int ID, String make, String model, String color, double price, String state,
-                  Date fabricationYear, Date registerDate, int dealerID) {
+                  Date fabricationYear, Date registerDate) {
         this.ID = ID;
         this.make = make;
         this.model = model;
@@ -24,7 +24,6 @@ public class CarDTO {
         this.state = state;
         this.fabricationYear = fabricationYear;
         this.registerDate = registerDate;
-        this.dealerID = dealerID;
     }
 
     public int getID() {
@@ -91,13 +90,6 @@ public class CarDTO {
         this.registerDate = registerDate;
     }
 
-    public int getDealerID() {
-        return dealerID;
-    }
-
-    public void setDealerID(int dealerID) {
-        this.dealerID = dealerID;
-    }
 
     @Override
     public String toString() {
@@ -110,7 +102,6 @@ public class CarDTO {
                 ", state='" + state + '\'' +
                 ", fabricationYear=" + fabricationYear +
                 ", registerDate=" + registerDate +
-                ", dealerID=" + dealerID +
                 '}';
     }
 }
