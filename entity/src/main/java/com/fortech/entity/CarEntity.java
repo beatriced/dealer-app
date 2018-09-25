@@ -34,13 +34,93 @@ public class CarEntity {
 
     @ManyToOne
     @JoinColumn(name = "dealerID", referencedColumnName = "ID")
-    private DealerEntity dealerEntity;
+    private int dealerID;
 
     @OneToMany(mappedBy = "carEntity", cascade = CascadeType.ALL)
     private List<SaleEntity> saleEntities;
 
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Date getFabricationYear() {
+        return fabricationYear;
+    }
+
+    public void setFabricationYear(Date fabricationYear) {
+        this.fabricationYear = fabricationYear;
+    }
+
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
+    }
+
+    public int getDealerID() {
+        return dealerID;
+    }
+
+    public void setDealerID(int dealerID) {
+        this.dealerID = dealerID;
+    }
+
+    public List<SaleEntity> getSaleEntities() {
+        return saleEntities;
+    }
+
+    public void setSaleEntities(List<SaleEntity> saleEntities) {
+        this.saleEntities = saleEntities;
+    }
+
     public CarEntity(String make, String model, String color, double price, String state,
-                     Date fabricationYear, Date registerDate, DealerEntity dealerEntity,
+                     Date fabricationYear, Date registerDate, int dealerID,
                      List<SaleEntity> saleEntities) {
         this.make = make;
         this.model = model;
@@ -49,7 +129,7 @@ public class CarEntity {
         this.state = state;
         this.fabricationYear = fabricationYear;
         this.registerDate = registerDate;
-        this.dealerEntity = dealerEntity;
+        this.dealerID = dealerID;
         this.saleEntities = saleEntities;
     }
 
@@ -67,7 +147,7 @@ public class CarEntity {
                 ", state='" + state + '\'' +
                 ", fabricationYear=" + fabricationYear +
                 ", registerDate=" + registerDate +
-                ", dealerEntity=" + dealerEntity +
+                ", dealerEntity=" + dealerID +
                 ", saleEntities=" + saleEntities +
                 '}';
     }

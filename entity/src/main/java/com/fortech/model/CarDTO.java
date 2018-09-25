@@ -1,5 +1,7 @@
 package com.fortech.model;
 
+import com.fortech.entity.CarEntity;
+
 import java.util.Date;
 
 public class CarDTO {
@@ -13,6 +15,17 @@ public class CarDTO {
     private Date fabricationYear;
     private Date registerDate;
     private int dealerID;
+
+    public CarDTO(CarEntity carEntity){
+        this.ID=carEntity.getID();
+        this.make=carEntity.getMake();
+        this.color=carEntity.getColor();
+        this.price=carEntity.getPrice();
+        this.state=carEntity.getState();
+        this.fabricationYear=carEntity.getFabricationYear();
+        this.registerDate=carEntity.getRegisterDate();
+        this.dealerID=carEntity.getDealerID();
+    }
 
     public int getID() {
         return ID;

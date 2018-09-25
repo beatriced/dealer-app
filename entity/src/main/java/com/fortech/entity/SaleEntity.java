@@ -20,23 +20,71 @@ public class SaleEntity {
 
     @ManyToOne
     @JoinColumn(name = "dealerID", referencedColumnName = "ID")
-    private DealerEntity dealerEntity;
+    private int dealerID;
 
     @ManyToOne
     @JoinColumn(name = "customerID", referencedColumnName = "ID")
-    private CustomerEntity customerEntity;
+    private int customerID;
 
     @ManyToOne
     @JoinColumn(name = "carID", referencedColumnName = "ID")
-    private CarEntity carEntity;
+    private int carID;
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public int getDealerID() {
+        return dealerID;
+    }
+
+    public void setDealerID(int dealerID) {
+        this.dealerID = dealerID;
+    }
+
+    public int getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
+    }
+
+    public int getCarID() {
+        return carID;
+    }
+
+    public void setCarID(int carID) {
+        this.carID = carID;
+    }
 
     public SaleEntity(String paymentType, Date orderDate,
-                      DealerEntity dealerEntity, CustomerEntity customerEntity, CarEntity carEntity) {
+                      int dealerID, int customerID, int carID) {
         this.paymentType = paymentType;
         this.orderDate = orderDate;
-        this.dealerEntity = dealerEntity;
-        this.customerEntity = customerEntity;
-        this.carEntity = carEntity;
+        this.dealerID = dealerID;
+        this.customerID = customerID;
+        this.carID = carID;
     }
 
     public SaleEntity() {
@@ -48,9 +96,9 @@ public class SaleEntity {
                 "saleId=" + ID +
                 ", paymentType='" + paymentType + '\'' +
                 ", orderDate=" + orderDate +
-                ", dealerEntity=" + dealerEntity +
-                ", customerEntity=" + customerEntity +
-                ", carEntity=" + carEntity +
+                ", dealerEntity=" + dealerID +
+                ", customerEntity=" + customerID +
+                ", carEntity=" + carID +
                 '}';
     }
 }

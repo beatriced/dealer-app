@@ -1,5 +1,7 @@
 package com.fortech.model;
 
+import com.fortech.entity.SaleEntity;
+
 import java.util.Date;
 
 public class SaleDTO {
@@ -10,6 +12,15 @@ public class SaleDTO {
     private int carID;
     private int dealerID;
     private int customerId;
+
+    public SaleDTO(SaleEntity saleEntity){
+        this.ID=saleEntity.getID();
+        this.paymentType=saleEntity.getPaymentType();
+        this.orderDate=saleEntity.getOrderDate();
+        this.carID=saleEntity.getCarID();
+        this.dealerID=saleEntity.getDealerID();
+        this.customerId=saleEntity.getCustomerID();
+    }
 
     public String getPaymentType() {
         return paymentType;

@@ -29,6 +29,62 @@ public class DealerEntity {
     @OneToMany(mappedBy = "dealerEntity", cascade = CascadeType.ALL)
     private List<SaleEntity> saleEntityList;
 
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<CarEntity> getCarEntityList() {
+        return carEntityList;
+    }
+
+    public void setCarEntityList(List<CarEntity> carEntityList) {
+        this.carEntityList = carEntityList;
+    }
+
+    public List<SaleEntity> getSaleEntityList() {
+        return saleEntityList;
+    }
+
+    public void setSaleEntityList(List<SaleEntity> saleEntityList) {
+        this.saleEntityList = saleEntityList;
+    }
+
     public DealerEntity(String lastName, String firstName, String password, String email,
                         List<CarEntity> carEntityList, List<SaleEntity> saleEntityList) {
         this.lastName = lastName;
