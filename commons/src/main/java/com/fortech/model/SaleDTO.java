@@ -8,11 +8,13 @@ public class SaleDTO implements Serializable {
     private int ID;
     private String paymentType;
     private Date orderDate;
+    private String status;
 
-    public SaleDTO(int ID, String paymentType, Date orderDate) {
+    public SaleDTO(int ID, String paymentType, Date orderDate, String status) {
         this.ID = ID;
         this.paymentType = paymentType;
         this.orderDate = orderDate;
+        this.status = status;
     }
 
     public String getPaymentType() {
@@ -39,6 +41,13 @@ public class SaleDTO implements Serializable {
         this.ID = ID;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     @Override
     public String toString() {
@@ -46,6 +55,7 @@ public class SaleDTO implements Serializable {
                 "ID=" + ID +
                 ", paymentType='" + paymentType + '\'' +
                 ", orderDate=" + orderDate +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

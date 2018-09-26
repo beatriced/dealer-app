@@ -8,12 +8,18 @@ import javax.ejb.Remote;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.List;
+import java.util.Map;
 
 @Remote(SaleRepository.class)
 public class SaleRepositoryImpl implements SaleRepository {
 
     private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PU");
     private EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+    List<SaleDTO> saleDTOList;
+
+    private static Map<Integer, SaleDTO> sales;
 
     public void add(SaleDTO saleDTO) {
 
@@ -25,5 +31,18 @@ public class SaleRepositoryImpl implements SaleRepository {
         entityManager.getTransaction().begin();
         entityManager.persist(saleEntity);
         entityManager.getTransaction().commit();
+    }
+
+    public List<SaleDTO> getAllSales() {
+        return saleDTOList;
+    }
+
+    public void update(SaleDTO saleDTO) {
+        SaleDTO sale =sales.get(saleDTO.getID());
+        sale.setOrderDate(saleDTO.getOrderDate());
+        sale.setPaymentType(saleDTO.getPaymentType());
+        sale.setStatus(saleDTO.getStatus());
+
+        sales.put(sale.getID(), sale);
     }
 }

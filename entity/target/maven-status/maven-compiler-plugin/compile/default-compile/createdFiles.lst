@@ -1,4 +1,12 @@
-com\fortech\entity\DealerEntity.class
-com\fortech\entity\CarEntity.class
 com\fortech\entity\CustomerEntity.class
+repository\SaleRepository.class
+repository\CustomerRepository.class
+repository\CarRepository.class
+com\fortech\entity\DealerEntity.class
+repository\impl\CutomerRepositoryImpl.class
+repository\DealerRepository.class
 com\fortech\entity\SaleEntity.class
+repository\impl\SaleRepositoryImpl.class
+com\fortech\entity\CarEntity.class
+repository\impl\DealerRepositoryImpl.class
+repository\impl\CarRepositoryImpl.class

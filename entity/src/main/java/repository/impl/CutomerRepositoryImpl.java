@@ -8,6 +8,7 @@ import javax.ejb.Remote;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 @Remote(CustomerRepository.class)
 public class CutomerRepositoryImpl implements CustomerRepository {
@@ -28,6 +29,16 @@ public class CutomerRepositoryImpl implements CustomerRepository {
         entityManager.getTransaction().begin();
         entityManager.persist(customerEntity);
         entityManager.getTransaction().commit();
+    }
+
+    public String findByEmailAndPassword(String email, String password) {
+        CustomerEntity customerEntity = new CustomerEntity();
+
+        Query query = entityManager.createNamedQuery("customer.findCustomer");
+        query.setParameter("email", email);
+        customerEntity = (CustomerEntity) query.getSingleResult();
+
+        return customerEntity.getFirstName();
     }
 
 }

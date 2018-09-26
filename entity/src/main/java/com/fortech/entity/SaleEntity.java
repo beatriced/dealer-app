@@ -18,6 +18,9 @@ public class SaleEntity {
     @Column(name = "orderDate")
     private Date orderDate;
 
+    @Column(name = "status")
+    private String status;
+
     @ManyToOne
     @JoinColumn(name = "dealerID", referencedColumnName = "ID")
     private DealerEntity dealerEntity;
@@ -31,12 +34,13 @@ public class SaleEntity {
     private CarEntity carEntity;
 
     public SaleEntity(String paymentType, Date orderDate, DealerEntity dealerEntity,
-                      CustomerEntity customerEntity, CarEntity carEntity) {
+                      CustomerEntity customerEntity, CarEntity carEntity, String status) {
         this.paymentType = paymentType;
         this.orderDate = orderDate;
         this.dealerEntity = dealerEntity;
         this.customerEntity = customerEntity;
         this.carEntity = carEntity;
+        this.status = status;
     }
 
     public SaleEntity() {
@@ -90,12 +94,21 @@ public class SaleEntity {
         this.carEntity = carEntity;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "SaleEntity{" +
                 "ID=" + ID +
                 ", paymentType='" + paymentType + '\'' +
                 ", orderDate=" + orderDate +
+                ", status='" + status + '\'' +
                 ", dealerEntity=" + dealerEntity +
                 ", customerEntity=" + customerEntity +
                 ", carEntity=" + carEntity +

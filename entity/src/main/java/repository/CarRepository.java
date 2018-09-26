@@ -10,4 +10,10 @@ public interface CarRepository {
     void add(CarDTO carDTO);
 
     List<CarDTO> search(SearchCriteria searchCriteria);
+
+    List<CarDTO> getAllCars();
+
+    void deleteCar(CarDTO carDTO);
+
+    void update(CarDTO carDTO);
 }
