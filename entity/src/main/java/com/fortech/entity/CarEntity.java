@@ -11,8 +11,8 @@ public class CarEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
 
-    @Column(name = "make")
-    private String make;
+    @Column(name = "mark")
+    private String mark;
 
     @Column(name = "model")
     private String model;
@@ -39,10 +39,10 @@ public class CarEntity {
     @OneToMany(mappedBy = "carEntity", cascade = CascadeType.ALL)
     private List<SaleEntity> saleEntities;
 
-    public CarEntity(String make, String model, String color, double price, String state,
+    public CarEntity(String mark, String model, String color, double price, String state,
                      Date fabricationYear, Date registerDate, DealerEntity dealerEntity,
                      List<SaleEntity> saleEntities) {
-        this.make = make;
+        this.mark = mark;
         this.model = model;
         this.color = color;
         this.price = price;
@@ -64,12 +64,12 @@ public class CarEntity {
         this.ID = ID;
     }
 
-    public String getMake() {
-        return make;
+    public String getMark() {
+        return mark;
     }
 
-    public void setMake(String make) {
-        this.make = make;
+    public void setMark(String make) {
+        this.mark = make;
     }
 
     public String getModel() {
@@ -140,7 +140,7 @@ public class CarEntity {
     public String toString() {
         return "CarEntity{" +
                 "ID=" + ID +
-                ", make='" + make + '\'' +
+                ", make='" + mark + '\'' +
                 ", model='" + model + '\'' +
                 ", color='" + color + '\'' +
                 ", price=" + price +

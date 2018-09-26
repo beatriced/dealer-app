@@ -1,0 +1,31 @@
+package repository.impl;
+
+import com.fortech.entity.DealerEntity;
+import com.fortech.model.DealerDTO;
+import repository.DealerRepository;
+
+import javax.ejb.Remote;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+@Remote(DealerRepository.class)
+public class DealerRepositoryImpl implements DealerRepository {
+
+    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PU");
+    private EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+    public void addDealer(DealerDTO dealerDTO) {
+
+        DealerEntity dealerEntity = new DealerEntity();
+
+        dealerEntity.setLastName(dealerDTO.getLastName());
+        dealerEntity.setFirstName(dealerDTO.getFisrtName());
+        dealerEntity.setEmail(dealerDTO.getEmail());
+        dealerEntity.setPassword(dealerDTO.getPassword());
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(dealerEntity);
+        entityManager.getTransaction().commit();
+    }
+}

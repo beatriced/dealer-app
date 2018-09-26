@@ -6,7 +6,7 @@ import java.util.Date;
 public class CarDTO implements Serializable {
 
     private int ID;
-    private String make;
+    private String mark;
     private String model;
     private String color;
     private double price;
@@ -14,10 +14,13 @@ public class CarDTO implements Serializable {
     private Date fabricationYear;
     private Date registerDate;
 
-    public CarDTO(int ID, String make, String model, String color, double price, String state,
+    public CarDTO() {
+    }
+
+    public CarDTO(int ID, String mark, String model, String color, double price, String state,
                   Date fabricationYear, Date registerDate) {
         this.ID = ID;
-        this.make = make;
+        this.mark = mark;
         this.model = model;
         this.color = color;
         this.price = price;
@@ -34,12 +37,12 @@ public class CarDTO implements Serializable {
         this.ID = ID;
     }
 
-    public String getMake() {
-        return make;
+    public String getMark() {
+        return mark;
     }
 
-    public void setMake(String make) {
-        this.make = make;
+    public void setMark(String mark) {
+        this.mark = mark;
     }
 
     public String getModel() {
@@ -95,7 +98,7 @@ public class CarDTO implements Serializable {
     public String toString() {
         return "CarDTO{" +
                 "ID=" + ID +
-                ", make='" + make + '\'' +
+                ", mark='" + mark + '\'' +
                 ", model='" + model + '\'' +
                 ", color='" + color + '\'' +
                 ", price=" + price +
