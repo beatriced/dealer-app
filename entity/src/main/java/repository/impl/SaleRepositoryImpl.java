@@ -38,7 +38,7 @@ public class SaleRepositoryImpl implements SaleRepository {
     }
 
     public void update(SaleDTO saleDTO) {
-        SaleDTO sale =sales.get(saleDTO.getID());
+        SaleDTO sale = sales.get(saleDTO.getID());
         sale.setOrderDate(saleDTO.getOrderDate());
         sale.setPaymentType(saleDTO.getPaymentType());
         sale.setStatus(saleDTO.getStatus());

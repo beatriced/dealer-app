@@ -44,7 +44,6 @@ public class CarRepositoryImpl implements CarRepository {
 
     public void deleteCar(CarDTO carDTO) {
         carDTOList.remove(carDTO.getID());
-        System.out.print("Car: " + carDTO.getID() + " deleted from database");
     }
 
     public void update(CarDTO carDTO) {

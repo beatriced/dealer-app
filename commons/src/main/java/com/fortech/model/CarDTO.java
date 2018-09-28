@@ -9,7 +9,7 @@ public class CarDTO implements Serializable {
     private String mark;
     private String model;
     private String color;
-    private double price;
+    private int price;
     private String state;
     private Date fabricationYear;
     private Date registerDate;
@@ -17,7 +17,7 @@ public class CarDTO implements Serializable {
     public CarDTO() {
     }
 
-    public CarDTO(int ID, String mark, String model, String color, double price, String state,
+    public CarDTO(int ID, String mark, String model, String color, int price, String state,
                   Date fabricationYear, Date registerDate) {
         this.ID = ID;
         this.mark = mark;
@@ -61,11 +61,11 @@ public class CarDTO implements Serializable {
         this.color = color;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

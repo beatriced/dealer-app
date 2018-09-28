@@ -16,6 +16,9 @@ public class DealerDTO implements Serializable {
     @Size(min = 6)
     private String password;
 
+    public DealerDTO() {
+    }
+
     public DealerDTO(int ID, String lastName, String firstName,
                      @Email String email, @Size(min = 6) String password) {
         this.ID = ID;

@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "sales")
+@Table(name = "sales", schema = "dealer")
 public class SaleEntity {
 
     @Id
@@ -16,21 +16,22 @@ public class SaleEntity {
     private String paymentType;
 
     @Column(name = "orderDate")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;
 
     @Column(name = "status")
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "dealerID", referencedColumnName = "ID")
+    @JoinColumn(name = "dealers.ID", referencedColumnName = "ID")
     private DealerEntity dealerEntity;
 
     @ManyToOne
-    @JoinColumn(name = "customerID", referencedColumnName = "ID")
+    @JoinColumn(name = "customers.ID", referencedColumnName = "ID")
     private CustomerEntity customerEntity;
 
     @ManyToOne
-    @JoinColumn(name = "carID", referencedColumnName = "ID")
+    @JoinColumn(name = "cars.ID", referencedColumnName = "ID")
     private CarEntity carEntity;
 
     public SaleEntity(String paymentType, Date orderDate, DealerEntity dealerEntity,

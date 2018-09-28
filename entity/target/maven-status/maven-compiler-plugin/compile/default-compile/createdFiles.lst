@@ -1,3 +1,4 @@
+DealerApplication.class
 com\fortech\entity\CustomerEntity.class
 repository\SaleRepository.class
 repository\CustomerRepository.class

@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "Cars")
+@Table(name = "cars", schema = "dealer")
 public class CarEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,25 +21,27 @@ public class CarEntity {
     private String color;
 
     @Column(name = "price")
-    private double price;
+    private int price;
 
     @Column(name = "state")
     private String state;
 
     @Column(name = "fabricationYear")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fabricationYear;
 
     @Column(name = "registerDate")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date registerDate;
 
     @ManyToOne
-    @JoinColumn(name = "dealerID", referencedColumnName = "ID")
+    @JoinColumn(name = "dealers.ID", referencedColumnName = "ID")
     private DealerEntity dealerEntity;
 
     @OneToMany(mappedBy = "carEntity", cascade = CascadeType.ALL)
     private List<SaleEntity> saleEntities;
 
-    public CarEntity(String mark, String model, String color, double price, String state,
+    public CarEntity(String mark, String model, String color, int price, String state,
                      Date fabricationYear, Date registerDate, DealerEntity dealerEntity,
                      List<SaleEntity> saleEntities) {
         this.mark = mark;
@@ -88,11 +90,11 @@ public class CarEntity {
         this.color = color;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

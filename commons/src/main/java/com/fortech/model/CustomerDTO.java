@@ -18,6 +18,9 @@ public class CustomerDTO implements Serializable {
 
     private String type;
 
+    public CustomerDTO() {
+    }
+
     public CustomerDTO(int ID, String lastName, String firstName,
                        @Email String email, @Size(min = 6) String password, String type) {
         this.ID = ID;

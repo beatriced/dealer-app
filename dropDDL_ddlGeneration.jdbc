@@ -1,0 +1,9 @@
+ALTER TABLE dealer.cars DROP FOREIGN KEY FK_cars_dealers.ID
+ALTER TABLE dealer.sales DROP FOREIGN KEY FK_sales_dealers.ID
+ALTER TABLE dealer.sales DROP FOREIGN KEY FK_sales_cars.ID
+ALTER TABLE dealer.sales DROP FOREIGN KEY FK_sales_customers.ID
+DROP TABLE dealer.cars
+DROP TABLE dealer.customers
+DROP TABLE dealer.dealers
+DROP TABLE dealer.sales
+DELETE FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'

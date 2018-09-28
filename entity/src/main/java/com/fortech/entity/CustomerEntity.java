@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Customers")
+@Table(name = "customers", schema = "dealer")
 public class CustomerEntity {
 
     @Id
@@ -17,16 +17,16 @@ public class CustomerEntity {
     @Column(name = "firstName")
     private String firstName;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password")
     private String password;
 
     @Column(name = "type")
     private String type;
 
-    @OneToMany(mappedBy = "Customers", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customerEntity", cascade = CascadeType.ALL)
     private List<SaleEntity> saleEntityList;
 
     public CustomerEntity(String lastName, String firstName, String email, String password, String type,
