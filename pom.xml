@@ -11,6 +11,7 @@
         <module>entity</module>
         <module>web</module>
         <module>commons</module>
+        <module>business</module>
     </modules>
 
 
