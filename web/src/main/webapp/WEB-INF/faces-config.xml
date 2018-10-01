@@ -7,10 +7,26 @@
         version="2.0">
 
     <navigation-rule>
-        <display-name>register.xhtml</display-name>
+        <from-view-id>dealerLogin.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>home</from-outcome>
-            <to-view-id>home.xhtml</to-view-id>
+            <from-outcome>success</from-outcome>
+            <to-view-id>homeDealer.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>dealerLogin.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>customerLogin.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>homeCustomer.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>customerLogin.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 

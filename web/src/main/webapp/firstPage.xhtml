@@ -4,16 +4,9 @@
 
 <html xmlns:h="http://java.sun.com/jsf/html">
 
-<h:panelGroup rendered="#{not empty user}">
-
-    <p>Welcome, #{}</p>
-    <br></br>
-    <br></br>
-
-    <h:form>
-        <h:commandButton value="logout" action=""></h:commandButton>
-    </h:form>
-
-</h:panelGroup>
+<h:body>
+    <h:outputLink styleClass="buttons" value="dealerRegister.xhtml"> Dealer </h:outputLink>
+    <h:outputLink styleClass="buttons" value="customerRegister.xhtml"> Customer </h:outputLink>
+</h:body>
 
 </html>

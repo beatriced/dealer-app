@@ -26,12 +26,15 @@
                          validatorMessage="Invalid email format" value="#{dealerBean.dealerDTO.email}"/>
 
             <h:outputLabel value="Password:"/>
-            <h:inputSecret id="idPassword" value="#{dealerBean.dealerDTO.password}" match="idPassword2" required="true"/>
+            <h:inputSecret id="idPassword" value="#{dealerBean.dealerDTO.password}" match="idPassword2"
+                           required="true"/>
 
             <h:outputLabel value="Retype your password:"/>
             <h:inputSecret id="idPassword2" value="#{dealerBean.dealerDTO.password}" required="true"/>
 
             <h:commandButton value="Sign in" action="#{dealerBean.register()}" id="registerButton"/>
+
+            <h:outputLink styleClass="buttons" value="dealerLogin.xhtml"> Login </h:outputLink>
 
         </div>
 

@@ -13,12 +13,14 @@
     <h:form id="loginForm" action="">
 
         <h:outputLabel value="Email:"/>
-        <h:inputText id="email" value="#{dealerBean.email}" />
+        <h:inputText id="email" value="#{dealerBean.email}"/>
 
         <h:outputLabel value="Password:"/>
-        <h:inputSecret id="idPass" value="#{dealerBean.password}" />
+        <h:inputSecret id="idPass" value="#{dealerBean.password}"/>
 
         <h:commandButton value="Login" action="#{dealerBean.login()}" id="loginButton"/>
+
+        <h:outputLink styleClass="buttons" value="dealerRegister.xhtml"> Sign Up </h:outputLink>
 
     </h:form>
 
