@@ -44,7 +44,7 @@ public class DealerDTO implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getFisrtName() {
+    public String getFirstName() {
         return firstName;
     }
 

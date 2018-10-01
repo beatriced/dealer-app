@@ -16,7 +16,7 @@ public class DealerBean {
     private DealerDTO dealerDTO = new DealerDTO();
 
     @EJB
-    private DealerService dealerService
+    private DealerService dealerService;
 
     public String login() {
 

@@ -6,7 +6,7 @@
 
 <h:head>
     <title>Register Page</title>
-    <link href="./resources/css/register.css" rel="stylesheet" type="text/css"></link>
+    <link href="./resources/css/register.css" rel="stylesheet" type="text/css"/>
 </h:head>
 
 <h:body>
@@ -16,27 +16,22 @@
         <div class="centerDiv" style="width: 400px">
 
             <h:outputLabel value="First Name:"/>
-            <h:inputText id="idFirstName" value="#{}" required="true"
-                         style="#{ component.valid ? '' : 'border-color:blue;'}"/>
+            <h:inputText id="idFirstName" value="#{customerBean.customerDTO.firstName}" required="true"/>
 
             <h:outputLabel value="Last Name:"/>
-            <h:inputText id="idLastName" value="#{}" required="true"
-                         style="#{ component.valid ? '' : 'border-color:blue;'}"/>
+            <h:inputText id="idLastName" value="#{customerBean.customerDTO.lastName}" required="true"/>
 
             <h:outputLabel value="Email:"/>
             <h:inputText id="email" required="true" label="email" requiredMessage="Email:"
-                         validatorMessage="Invalid email format" value="#{}"
-                         style="#{ component.valid ? '' : 'border-color:blue;'}"></h:inputText>
+                         validatorMessage="Invalid email format" value="#{customerBean.customerDTO.email}"/>
 
             <h:outputLabel value="Password:"/>
-            <h:inputSecret id="idPass" value="#{}" required="true"
-                           style="#{ component.valid ? '' : 'border-color:blue;'}"/>
+            <h:inputSecret id="idPassword" value="#{customerBean.customerDTO.password}" match="idPassword2" required="true"/>
 
-            <h:outputLabel value="Retype Password:"/>
-            <h:inputSecret id="idPass" value="#{}" required="true"
-                           style="#{ component.valid ? '' : 'border-color:blue;'}"></h:inputSecret>
+            <h:outputLabel value="Retype your password:"/>
+            <h:inputSecret id="idPassword2" value="#{customerBean.customerDTO.password}" required="true"/>
 
-            <h:commandButton value="Sign in" action="#{}" id="registerButton"></h:commandButton>
+            <h:commandButton value="Sign in" action="#{customerBean.register()}" id="registerButton"/>
 
         </div>
 

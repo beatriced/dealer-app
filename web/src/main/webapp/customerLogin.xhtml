@@ -5,7 +5,7 @@
 
 <h:head>
     <title>Login Page</title>
-    <link href="./resources/css/login.css" rel="stylesheet" type="text/css"></link>
+    <link href="./resources/css/login.css" rel="stylesheet" type="text/css"/>
 </h:head>
 
 <h:body>
@@ -13,12 +13,14 @@
     <h:form id="loginForm" action="">
 
         <h:outputLabel value="Email:"/>
-        <h:inputText id="email" value="#{}"/>
+        <h:inputText id="email" value="#{customerBean.email}"/>
 
         <h:outputLabel value="Password:"/>
-        <h:inputSecret id="idPass" value="#{}"/>
+        <h:inputSecret id="idPass" value="#{customerBean.password}"/>
 
-        <h:commandButton value="Login" action="#{}" id="loginButton"></h:commandButton>
+        <h:commandButton styleClass="buttons" value="Login" action="#{customerBean.login()}" id="loginButton"/>
+
+        <h:outputLink styleClass="buttons" value="customerRegister.xhtml" > Sign Up </h:outputLink>
 
     </h:form>
 

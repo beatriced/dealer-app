@@ -5,7 +5,7 @@
 
 <h:head>
     <title>Login Page</title>
-    <link href="./resources/css/login.css" rel="stylesheet" type="text/css"></link>
+    <link href="./resources/css/login.css" rel="stylesheet" type="text/css"/>
 </h:head>
 
 <h:body>
@@ -13,14 +13,12 @@
     <h:form id="loginForm" action="">
 
         <h:outputLabel value="Email:"/>
-        <h:inputText id="email" value="#{} rendered=" true"
-                         style="#{ component.valid ? '' : 'border-color:blue;'}""/>
+        <h:inputText id="email" value="#{dealerBean.email}" />
 
         <h:outputLabel value="Password:"/>
-        <h:inputSecret id="idPass" value="#{} rendered=" true"
-                         style="#{ component.valid ? '' : 'border-color:blue;'}""/>
+        <h:inputSecret id="idPass" value="#{dealerBean.password}" />
 
-        <h:commandButton value="Login" action="#{}" id="loginButton"></h:commandButton>
+        <h:commandButton value="Login" action="#{dealerBean.login()}" id="loginButton"/>
 
     </h:form>
 
