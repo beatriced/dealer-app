@@ -21,7 +21,7 @@ public class DealerRepositoryImpl implements DealerRepository {
         DealerEntity dealerEntity = new DealerEntity();
 
         dealerEntity.setLastName(dealerDTO.getLastName());
-        dealerEntity.setFirstName(dealerDTO.getFisrtName());
+        dealerEntity.setFirstName(dealerDTO.getFirstName());
         dealerEntity.setEmail(dealerDTO.getEmail());
         dealerEntity.setPassword(dealerDTO.getPassword());
 

@@ -13,10 +13,10 @@
     <h:form id="loginForm" action="">
 
         <h:outputLabel value="Email:"/>
-        <h:inputText id="email" value="#{dealerBean.email}"/>
+        <h:inputText id="email" value="#{dealerBean.email}" required="true"/>
 
         <h:outputLabel value="Password:"/>
-        <h:inputSecret id="idPass" value="#{dealerBean.password}"/>
+        <h:inputSecret id="idPass" value="#{dealerBean.password}" required="true"/>
 
         <h:commandButton value="Login" action="#{dealerBean.login()}" id="loginButton"/>
 

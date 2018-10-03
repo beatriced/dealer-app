@@ -12,6 +12,7 @@
         <module>web</module>
         <module>commons</module>
         <module>business</module>
+        <module>ear</module>
     </modules>
 
 

@@ -9,6 +9,7 @@
         <module name="." />
         <module name="business" />
         <module name="core" />
+        <module name="ear" />
         <module name="entity" />
         <module name="web" />
       </profile>
@@ -16,6 +17,7 @@
     <bytecodeTargetLevel>
       <module name="dealer-app-web" target="1.7" />
       <module name="dealer-cars-app-persistence" target="1.7" />
+      <module name="ear" target="1.5" />
       <module name="model" target="1.5" />
       <module name="Persistence" target="1.5" />
     </bytecodeTargetLevel>
