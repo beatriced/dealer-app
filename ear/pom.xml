@@ -7,16 +7,17 @@
         <groupId>com.fortech</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
     <packaging>ear</packaging>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>ear</artifactId>
 
     <dependencies>
+
         <dependency>
             <groupId>com.fortech</groupId>
             <artifactId>business</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <type>ejb</type>
         </dependency>
 
         <dependency>
@@ -29,18 +30,22 @@
             <groupId>com.fortech</groupId>
             <artifactId>entity</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <type>ejb</type>
         </dependency>
 
         <dependency>
             <groupId>com.fortech</groupId>
             <artifactId>web</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <type>war</type>
         </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
+
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
                 <version>3.0.1</version>
@@ -48,10 +53,10 @@
                 <configuration>
 
                     <modules>
+
                         <webModule>
                             <groupId>com.fortech</groupId>
                             <artifactId>web</artifactId>
-                            <contextRoot>/dealer-app</contextRoot>
                         </webModule>
 
                         <ejbModule>
@@ -63,9 +68,11 @@
                             <groupId>com.fortech</groupId>
                             <artifactId>business</artifactId>
                         </ejbModule>
+
                     </modules>
 
                 </configuration>
+
             </plugin>
         </plugins>
     </build>

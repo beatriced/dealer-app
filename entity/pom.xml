@@ -35,7 +35,6 @@
             <version>1.0.2</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
         <dependency>
             <groupId>org.eclipse.persistence</groupId>

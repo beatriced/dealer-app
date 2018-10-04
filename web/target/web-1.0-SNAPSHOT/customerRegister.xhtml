@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:head>
+    <title>Register Page</title>
+    <link href="./resources/css/register.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+
+    <h:form>
+
+        <div class="centerDiv" style="width: 400px">
+
+            <h:outputLabel value="First Name:"/>
+            <h:inputText id="idFirstName" value="#{customerBean.customerDTO.firstName}" required="true"/>
+
+            <h:outputLabel value="Last Name:"/>
+            <h:inputText id="idLastName" value="#{customerBean.customerDTO.lastName}" required="true"/>
+
+            <h:outputLabel value="Email:"/>
+            <h:inputText id="email" required="true" label="email" requiredMessage="Email:"
+                         validatorMessage="Invalid email format" value="#{customerBean.customerDTO.email}"/>
+
+            <h:outputLabel value="Password:"/>
+            <h:inputSecret id="idPassword" value="#{customerBean.customerDTO.password}" match="idPassword2"
+                           required="true"/>
+
+            <h:outputLabel value="Retype your password:"/>
+            <h:inputSecret id="idPassword2" value="#{customerBean.customerDTO.password}" required="true"/>
+
+            <h:commandButton value="Sign in" action="#{customerBean.register()}" id="registerButton"/>
+
+            <h:outputLink styleClass="buttons" value="customerLogin.xhtml"> Login </h:outputLink>
+
+        </div>
+
+    </h:form>
+
+</h:body>
+
+</html>
