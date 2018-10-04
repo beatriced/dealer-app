@@ -57,6 +57,7 @@
                         <webModule>
                             <groupId>com.fortech</groupId>
                             <artifactId>web</artifactId>
+                            <contextRoot>/dealer</contextRoot>
                         </webModule>
 
                         <ejbModule>
