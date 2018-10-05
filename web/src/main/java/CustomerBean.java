@@ -22,7 +22,7 @@ public class CustomerBean {
 
         String customer = customerService.login(email, password);
         if (!customer.isEmpty()) {
-            return "firstPage.xhtml?faces-redirect=true";
+            return "homeCustomer.xhtml?faces-redirect=true";
         } else {
             FacesContext facesContext = FacesContext.getCurrentInstance();
             facesContext.addMessage(null, new FacesMessage("Bad credentials"));

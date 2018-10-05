@@ -22,7 +22,7 @@ public class DealerBean {
 
         String dealer = dealerService.login(email, password);
         if (!dealer.isEmpty()) {
-            return "firstPage.xhtml?faces-redirect=true";
+            return "homeDealer.xhtml?faces-redirect=true";
         } else {
             FacesContext facesContext = FacesContext.getCurrentInstance();
             facesContext.addMessage(null, new FacesMessage("Bad credentials"));
@@ -34,7 +34,7 @@ public class DealerBean {
     public String register() {
 
         dealerService.register(dealerDTO);
-        return "customerLogin.xhtml?faces-redirect=true";
+        return "dealerLogin.xhtml?faces-redirect=true";
     }
 
     public String getEmail() {
