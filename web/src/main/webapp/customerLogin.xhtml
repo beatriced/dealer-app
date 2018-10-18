@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head>
     <title>Login Page</title>
@@ -10,17 +11,26 @@
 
 <h:body>
 
-    <h:form id="loginForm" action="">
+    <h:form id="loginForm">
 
-        <h:outputLabel value="Email:"/>
-        <h:inputText id="email" value="#{customerBean.email}" required="true"/>
+        <p:growl id="growl" sticky="false" showDetail="true"/>
+        <p:panelGrid columns="2" columnClasses="label value ui-grid-col-2">
 
-        <h:outputLabel value="Password:"/>
-        <h:inputSecret id="idPass" value="#{customerBean.password}" required="true"/>
+            <p:outputLabel type="text" value="Email: " name="email"/>
+            <p:inputText type="text" name="Email" id="idEmail" value="#{customerBean.customerDTO.email}" required="true"/>
 
-        <h:commandButton styleClass="buttons" value="Login" action="#{customerBean.login()}" id="loginButton"/>
+            <p:outputLabel type="text" value="Password: " name="Password"/>
+            <p:inputText type="text" name="Password" id="idPassword" value="#{customerBean.customerDTO.password}" required="true"/>
 
-        <h:outputLink styleClass="buttons" value="customerRegister.xhtml"> Sign Up </h:outputLink>
+            <p:commandButton value="Sign in" action="#{customerBean.login()}" id="loginButton"
+                             update="loginForm growl">
+            </p:commandButton>
+
+            <h:outputLink
+                    styleClass="buttons" value="customerRegister.xhtml" class="sign-up">Sign Up!
+            </h:outputLink>
+
+        </p:panelGrid>
 
     </h:form>
 

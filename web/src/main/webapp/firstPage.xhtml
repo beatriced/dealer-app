@@ -4,9 +4,23 @@
 
 <html xmlns:h="http://java.sun.com/jsf/html">
 
-<h:body>
-    <h:outputLink styleClass="buttons" value="dealerRegister.xhtml"> Dealer </h:outputLink>
-    <h:outputLink styleClass="buttons" value="customerRegister.xhtml"> Customer </h:outputLink>
-</h:body>
+<head>
+    <h:head name="subtitle">
+        Welcome
+    </h:head>
+</head>
+
+<body>
+    <h:form id="firstPage">
+        <a href="dealerLogin.xhtml">Dealer Log In</a>
+        <a href="dealerRegister.xhtml">Dealer Sign Ip</a>
+
+        <br> </br>
+        <br> </br>
+
+        <a href="customerLogin.xhtml">Customer Log In</a>
+        <a href="customerRegister.xhtml">Customer Sign Ip</a>
+    </h:form>
+</body>
 
 </html>

@@ -5,21 +5,23 @@ import com.fortech.model.SaleDTO;
 import repository.SaleRepository;
 
 import javax.ejb.Remote;
+import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
 import java.util.Map;
 
+@Stateful
 @Remote(SaleRepository.class)
 public class SaleRepositoryImpl implements SaleRepository {
 
     private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PU");
     private EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-    List<SaleDTO> saleDTOList;
+    private List<SaleDTO> saleDTOList;
 
-    private static Map<Integer, SaleDTO> sales;
+    private Map<Integer, SaleDTO> sales;
 
     public void add(SaleDTO saleDTO) {
 

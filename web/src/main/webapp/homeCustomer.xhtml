@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head>
     <title>Home Page</title>
-    <link href="./resources/css/homeCustomer.css" rel="stylesheet" type="text/css"/>
 </h:head>
+
+<h:body>
+
+    <h:form>
+        <p:growl id="messages"/>
+
+        <p:menubar>
+
+            <p:submenu label="Cars" icon="ui-icon-gear">
+                <p:menuitem value="Search car" url="#"> </p:menuitem>
+                <p:menuitem value="Add sale" url="#"> </p:menuitem>
+            </p:submenu>
+
+            <p:submenu label="Services" icon="ui-icon-gear"> </p:submenu>
+            <p:submenu label="About us" icon="ui-icon-gear"> </p:submenu>
+
+        </p:menubar>
+
+    </h:form>
+
+</h:body>
 
 </html>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 
 <h:head>
@@ -11,32 +12,35 @@
 
 <h:body>
 
-    <h:form>
+    <h:form id="registerForm">
 
-        <div class="centerDiv" style="width: 400px">
+        <p:growl id="growl" sticky="false" showDetail="true"/>
+        <p:panelGrid columns="2" columnClasses="label value ui-grid-col-2">
 
-            <h:outputLabel value="First Name:"/>
-            <h:inputText id="idFirstName" value="#{customerBean.customerDTO.firstName}" required="true"/>
+            <p:outputLabel type="text" value="First Name: " name="firstName"/>
+            <p:inputText type="text" name="FisrtName" id="idFisrtName" value="#{customerBean.customerDTO.firstName}" required="true"/>
 
-            <h:outputLabel value="Last Name:"/>
-            <h:inputText id="idLastName" value="#{customerBean.customerDTO.lastName}" required="true"/>
+            <p:outputLabel type="text" value="Last Name: " name="lastName"/>
+            <p:inputText type="text" name="LastName" id="idLastName" value="#{customerBean.customerDTO.lastName}" required="true"/>
 
-            <h:outputLabel value="Email:"/>
-            <h:inputText id="email" required="true" label="email" requiredMessage="Email:"
-                         validatorMessage="Invalid email format" value="#{customerBean.customerDTO.email}"/>
+            <p:outputLabel type="text" value="Email: " name="email"/>
+            <p:inputText type="text" name="Email" id="idEmail" value="#{customerBean.customerDTO.email}"required="true"/>
 
-            <h:outputLabel value="Password:"/>
-            <h:inputSecret id="idPassword" value="#{customerBean.customerDTO.password}" match="idPassword2"
-                           required="true"/>
+            <p:outputLabel type="text" value="Password: " name="password"/>
+            <p:password name="Password" id="idPassword1" match="idPassword2" value="#{customerBean.customerDTO.password}"/>
 
-            <h:outputLabel value="Retype your password:"/>
-            <h:inputSecret id="idPassword2" value="#{customerBean.customerDTO.password}" required="true"/>
+            <p:outputLabel type="text" value="Retype your password: " name="password"/>
+            <p:password name="Password" id="idPassword2" value="#{customerBean.customerDTO.password}"/>
 
-            <h:commandButton value="Sign in" action="#{customerBean.register()}" id="registerButton"/>
+            <p:commandButton value="Register" action="#{customerBean.register()}" id="registerButton"
+                             update="registerForm growl">
+            </p:commandButton>
 
-            <h:outputLink styleClass="buttons" value="customerLogin.xhtml"> Login </h:outputLink>
+            <h:outputLink
+                    styleClass="buttons" value="customerLogin.xhtml" class="log-in">Log In!
+            </h:outputLink>
 
-        </div>
+        </p:panelGrid>
 
     </h:form>
 

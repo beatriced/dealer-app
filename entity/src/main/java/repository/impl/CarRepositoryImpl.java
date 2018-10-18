@@ -6,20 +6,22 @@ import com.fortech.model.SearchCriteria;
 import repository.CarRepository;
 
 import javax.ejb.Remote;
+import javax.ejb.Stateful;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@Stateful
 @Remote(CarRepository.class)
 public class CarRepositoryImpl implements CarRepository {
 
     private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PU");
     private EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-    List<CarDTO> carDTOList;
+    private List<CarDTO> carDTOList;
 
-    private static Map<Integer, CarDTO> cars;
+    private Map<Integer, CarDTO> cars;
 
     public void add(CarDTO carDTO) {
 
@@ -58,6 +60,7 @@ public class CarRepositoryImpl implements CarRepository {
 
         cars.put(car.getID(), car);
     }
+
 
     public List<CarDTO> search(SearchCriteria searchCriteria) {
 

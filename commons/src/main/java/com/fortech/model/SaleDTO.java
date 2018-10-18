@@ -10,6 +10,9 @@ public class SaleDTO implements Serializable {
     private Date orderDate;
     private String status;
 
+    public SaleDTO() {
+    }
+
     public SaleDTO(int ID, String paymentType, Date orderDate, String status) {
         this.ID = ID;
         this.paymentType = paymentType;

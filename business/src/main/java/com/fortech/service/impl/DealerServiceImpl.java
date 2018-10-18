@@ -15,8 +15,7 @@ public class DealerServiceImpl implements DealerService {
 
     public String login(String email, String password) {
 
-        String dealer = dealerRepository.findByEmailAndPassword(email, password);
-        return dealer;
+        return dealerRepository.findByEmailAndPassword(email, password);
     }
 
     public void register(DealerDTO dealerDTO) {

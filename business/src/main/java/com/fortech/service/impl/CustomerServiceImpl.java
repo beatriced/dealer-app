@@ -15,8 +15,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     public String login(String email, String password) {
 
-        String customer = customerRepository.findByEmailAndPassword(email, password);
-        return customer;
+        return customerRepository.findByEmailAndPassword(email, password);
     }
 
     public void register(CustomerDTO customerDTO) {

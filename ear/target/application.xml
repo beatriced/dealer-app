@@ -4,7 +4,7 @@
   <module>
     <web>
       <web-uri>com.fortech-web-1.0-SNAPSHOT.war</web-uri>
-      <context-root>/dealer</context-root>
+      <context-root>/web</context-root>
     </web>
   </module>
   <module>

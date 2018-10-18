@@ -1,5 +1,5 @@
+com\fortech\model\CarDTO.class
 com\fortech\model\SaleDTO.class
+com\fortech\model\DealerDTO.class
 com\fortech\model\SearchCriteria.class
 com\fortech\model\CustomerDTO.class
-com\fortech\model\CarDTO.class
-com\fortech\model\DealerDTO.class

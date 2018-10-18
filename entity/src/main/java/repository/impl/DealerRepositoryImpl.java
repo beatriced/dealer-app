@@ -5,11 +5,13 @@ import com.fortech.model.DealerDTO;
 import repository.DealerRepository;
 
 import javax.ejb.Remote;
+import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+@Stateful
 @Remote(DealerRepository.class)
 public class DealerRepositoryImpl implements DealerRepository {
 
