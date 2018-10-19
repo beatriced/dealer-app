@@ -26,4 +26,8 @@ public class CarServiceImpl implements CarService {
     public void update(CarDTO carDTO) {
         carRepository.update(carDTO);
     }
+
+    public void deleteCar(CarDTO carDTO) {
+        carRepository.deleteCar(carDTO);
+    }
 }
