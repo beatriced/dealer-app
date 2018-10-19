@@ -46,6 +46,10 @@
                 <p:outputLabel type="date" value="Registration Date: " name="registrationDate"/>
                 <p:calendar type="date" name="Registration Date" id="idRegistrationDate" value="#{carBean.carDTO.registrationDate}"/>
 
+                <p:commandButton value="Update car" action="#{carBean.update()}" id="updateButton"
+                                 update="updateForm growl">
+                </p:commandButton>
+
             </h:panelGrid>
 
         </p:panel>

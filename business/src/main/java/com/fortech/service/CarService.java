@@ -16,4 +16,6 @@ public interface CarService {
     void update(CarDTO carDTO);
 
     void deleteCar(CarDTO carDTO);
+
+    List<CarDTO> getAllCars();
 }

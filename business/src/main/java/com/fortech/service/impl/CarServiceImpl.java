@@ -30,4 +30,8 @@ public class CarServiceImpl implements CarService {
     public void deleteCar(CarDTO carDTO) {
         carRepository.deleteCar(carDTO);
     }
+
+    public List<CarDTO> getAllCars() {
+        return carRepository.getAllCars();
+    }
 }

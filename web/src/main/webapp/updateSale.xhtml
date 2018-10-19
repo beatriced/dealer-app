@@ -24,6 +24,10 @@
                 <p:outputLabel type="text" value="Status: " name="status"/>
                 <p:inputText type="text" name="Status" id="idStatus" value="#{saleBean.saleDTO.status}"/>
 
+                <p:commandButton value="Update sale" action="#{saleBean.update()}" id="updateButton"
+                                 update="updateForm growl">
+                </p:commandButton>
+
             </h:panelGrid>
 
         </p:panel>

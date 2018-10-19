@@ -6,6 +6,7 @@ import repository.SaleRepository;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import java.util.List;
 
 @Stateless
 public class SaleServiceImpl implements SaleService {
@@ -19,5 +20,9 @@ public class SaleServiceImpl implements SaleService {
 
     public void update(SaleDTO saleDTO) {
         saleRepository.update(saleDTO);
+    }
+
+    public List<SaleDTO> getAllSales() {
+        return saleRepository.getAllSales();
     }
 }
