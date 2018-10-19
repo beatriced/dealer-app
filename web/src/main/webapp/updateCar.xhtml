@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Update Car</title>
+</h:head>
+
+<h:body>
+
+    <h:form id="updateCar">
+
+        <p:growl id="growl" sticky="false" showDetail="true"/>
+
+        <p:panel id="updateCarPanel" header="Update a car" style="margin-bottom: 2px;">
+
+            <h:panelGrid columns="2" cellpadding="1">
+
+                <p:outputLabel type="text" value="Mark: " name="mark"/>
+                <p:inputText type="text" name="Mark" id="idMark" value="#{carBean.carDTO.mark}"/>
+
+                <p:outputLabel type="text" value="Model: " name="model"/>
+                <p:inputText type="text" name="Model" id="idModel" value="#{carBean.carDTO.mdoel}"/>
+
+                <p:outputLabel for="color" value="Color: "/>
+                <p:selectOneMenu id="idColor" value="#{carBean.carDTO.color}" style="width: 150px">
+                    <f:selectItem itemValue="" noSelectionOption="true"/>
+                    <f:selectItems value="#{carBean.colors}"/>
+                </p:selectOneMenu>
+
+                <p:outputLabel for="state" value="State: "/>
+                <p:selectOneMenu id="idState" value="#{carBean.carDTO.state}" style="width: 150px">
+                    <f:selectItem itemValue="" noSelectionOption="true"/>
+                    <f:selectItems value="#{carBean.state}"/>
+                </p:selectOneMenu>
+
+                <p:outputLabel type="number" value="Price: " name="price"/>
+                <p:spinner id="idPrice" value="#{carBean.carDTO.price}" stepFactor="100" min="0" suffix="$"/>
+
+                <p:outputLabel type="date" value="Fabrication Year: " name="fabricationYear"/>
+                <p:calendar type="date" name="Fabrication Year" id="idFabricationYear" value="#{carBean.carDTO.fabricationYear}"/>
+
+                <p:outputLabel type="date" value="Registration Date: " name="registrationDate"/>
+                <p:calendar type="date" name="Registration Date" id="idRegistrationDate" value="#{carBean.carDTO.registrationDate}"/>
+
+            </h:panelGrid>
+
+        </p:panel>
+
+    </h:form>
+
+</h:body>
+
+</html>

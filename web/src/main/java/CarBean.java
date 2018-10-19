@@ -96,6 +96,11 @@ public class CarBean {
         return "addCar.xhtml?faces-redirect=true";
     }
 
+    public String update(){
+        carService.update(carDTO);
+        return "updateCar.xhtml?faces-redirect=true";
+    }
+
     public CarDTO getCarDTO() {
         return carDTO;
     }

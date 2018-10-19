@@ -12,4 +12,6 @@ public interface CarService {
     void add(CarDTO carDTO);
 
     List<CarDTO> search(SearchCriteria searchCriteria);
+
+    void update(CarDTO carDTO);
 }

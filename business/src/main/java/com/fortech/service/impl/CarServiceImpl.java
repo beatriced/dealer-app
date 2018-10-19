@@ -22,4 +22,8 @@ public class CarServiceImpl implements CarService {
     public List<CarDTO> search(SearchCriteria searchCriteria) {
         return carRepository.search(searchCriteria);
     }
+
+    public void update(CarDTO carDTO) {
+        carRepository.update(carDTO);
+    }
 }
