@@ -8,4 +8,5 @@ import javax.ejb.Remote;
 public interface SaleService {
 
     void add(SaleDTO saleDTO);
+    void update(SaleDTO saleDTO);
 }

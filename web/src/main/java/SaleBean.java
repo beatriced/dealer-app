@@ -17,6 +17,16 @@ public class SaleBean {
     @EJB
     private SaleService saleService;
 
+    public String add(){
+        saleService.add(saleDTO);
+        return "addSale.xhtml?faces-redirect=true";
+    }
+
+    public String update(){
+        saleService.update(saleDTO);
+        return "updateSale.xhtml?faces-redirect=true";
+    }
+
     public String getPaymentType() {
         return paymentType;
     }

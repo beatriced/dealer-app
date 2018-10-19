@@ -16,4 +16,8 @@ public class SaleServiceImpl implements SaleService {
     public void add(SaleDTO saleDTO) {
         saleRepository.add(saleDTO);
     }
+
+    public void update(SaleDTO saleDTO) {
+        saleRepository.update(saleDTO);
+    }
 }
